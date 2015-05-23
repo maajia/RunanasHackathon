@@ -49,7 +49,7 @@ import java.util.List;
  */
 public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
-    private boolean  skipValidation=true;
+    private boolean  skipValidation=false;
 
     /**
      * A dummy authentication store containing known user names and passwords.
