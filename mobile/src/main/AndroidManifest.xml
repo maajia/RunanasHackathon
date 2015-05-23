@@ -40,6 +40,10 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
+        <activity
+            android:name=".LifeLoginWebPage"
+            android:label="@string/title_activity_life_login_web_page" >
+        </activity>
     </application>
 
 </manifest>
