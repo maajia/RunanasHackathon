@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 public class LifeLoginWebPage extends Activity {
@@ -16,9 +17,10 @@ public class LifeLoginWebPage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_life_login_web_page);
         WebView wv = (WebView) findViewById(R.id.browser_demo);
-        loadResource(wv, URL_TO_LOAD);
+        wv.setWebViewClient(new Callback());
+        wv.loadUrl(URL_TO_LOAD);
     }
 
     private void loadResource(WebView wv, String resource) {
@@ -26,4 +28,12 @@ public class LifeLoginWebPage extends Activity {
         wv.getSettings().setJavaScriptEnabled(true);
     }
 
+    private class Callback extends WebViewClient{  //HERE IS THE MAIN CHANGE.
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            return (false);
+        }
+
+    }
 }
