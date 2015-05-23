@@ -33,6 +33,7 @@ import android.widget.TextView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.SignInButton;
+import com.hh.hackathon.runanashackathon.services.CookieManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -297,7 +298,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         @Override
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
-
             try {
 
                 // Simulate network access.
@@ -315,7 +315,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
 
             // TODO: register the new account here.
-            Log.v("login", "fake login");
+            CookieManager.get().logIn(mEmail, mPassword);
             return true;
         }
 

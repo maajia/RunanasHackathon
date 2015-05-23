@@ -7,7 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.hh.hackathon.runanashackathon.services.CookieManager;
 import com.hh.hackathon.runanashackathon.services.RunanasClientApi;
+import com.hh.hackathon.runanashackathon.services.RunanasRestClient;
+import com.loopj.android.http.PersistentCookieStore;
 
 
 public class LandingActivity extends Activity {
@@ -17,14 +20,17 @@ public class LandingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
         hideSystemUI();
-
+        CookieManager.init(this);
         findViewById(R.id.leaveLandingPage).setOnClickListener(sendNotificationClickListener);
     }
 
     View.OnClickListener sendNotificationClickListener = new View.OnClickListener(){
         public void onClick(View view) {
-            Intent startLogin = new Intent(LandingActivity.this, LoginActivity.class);
-            startActivity(startLogin);
+           if(!CookieManager.get().isLoggedIn()) {
+               startActivity(new Intent(LandingActivity.this, LoginActivity.class));
+           } else {
+               startActivity(new Intent(LandingActivity.this, MainActivity.class));
+           }
         }
     };
 
