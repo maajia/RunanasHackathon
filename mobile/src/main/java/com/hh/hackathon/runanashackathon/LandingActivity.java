@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.hh.hackathon.runanashackathon.services.RunanasClientApi;
+
 
 public class LandingActivity extends Activity {
 
@@ -15,6 +17,7 @@ public class LandingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
         hideSystemUI();
+
         findViewById(R.id.leaveLandingPage).setOnClickListener(sendNotificationClickListener);
     }
 

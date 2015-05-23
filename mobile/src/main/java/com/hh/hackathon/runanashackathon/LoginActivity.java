@@ -299,6 +299,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // TODO: attempt authentication against a network service.
 
             try {
+
                 // Simulate network access.
                 Thread.sleep(2000);
             } catch (InterruptedException e) {

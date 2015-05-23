@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android'
+
 
 android {
     compileSdkVersion 22
@@ -17,6 +19,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/jersey-module-version'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
 }
 
 dependencies {
@@ -24,4 +35,12 @@ dependencies {
     wearApp project(':wear')
     compile 'com.google.android.gms:play-services:7.3.0'
     compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.loopj.android:android-async-http:1.4.5'
+    compile([group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.4.1'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.1'])
+
 }
+
+
+
