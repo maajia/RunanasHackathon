@@ -66,6 +66,16 @@ public class CookieManager {
         return cookie != null;
     }
 
+    public String getUsername() {
+        BasicClientCookie cookie = getCookie();
+        return cookie != null?cookie.getAttribute(USERNAME):null;
+    }
+
+    public String getPassword() {
+        BasicClientCookie cookie = getCookie();
+        return cookie != null?cookie.getAttribute(PASSWORD): null;
+    }
+
     private BasicClientCookie getCookie(){
         List<Cookie> cookies = _cookieStore.getCookies();
         if( cookies==null || cookies.size()==0 ) {

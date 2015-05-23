@@ -21,6 +21,7 @@ public class LandingActivity extends Activity {
         setContentView(R.layout.activity_landing);
         hideSystemUI();
         CookieManager.init(this);
+        new RunanasClientApi().getUsers();
         findViewById(R.id.leaveLandingPage).setOnClickListener(sendNotificationClickListener);
     }
 

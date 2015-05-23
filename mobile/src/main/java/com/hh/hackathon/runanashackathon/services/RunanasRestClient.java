@@ -13,23 +13,30 @@ import org.json.JSONException;
 public class RunanasRestClient {
 
     private static final String BASE_URL = "http://cconnection.de:8000/";
-    private static AsyncHttpClient client = new AsyncHttpClient();
+
     private static PersistentCookieStore _cookieStore;
 
     public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
-        client.get(getAbsoluteUrl(url), params, responseHandler);
+        getClient().get(getAbsoluteUrl(url), params, responseHandler);
+    }
+
+    private static AsyncHttpClient getClient(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        CookieManager manager =  CookieManager.get();
+        if(manager.isLoggedIn()) {
+            client.setBasicAuth(manager.getUsername(), manager.getPassword());
+        }
+        return client;
     }
 
     public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
-        client.post(getAbsoluteUrl(url), params, responseHandler);
+        getClient().post(getAbsoluteUrl(url), params, responseHandler);
     }
 
     private static String getAbsoluteUrl(String relativeUrl) {
         return BASE_URL + relativeUrl;
     }
 
-    public static void setCookieStore(PersistentCookieStore cookieStore) {
-        client.setCookieStore(cookieStore);
-    }
+
 
 }

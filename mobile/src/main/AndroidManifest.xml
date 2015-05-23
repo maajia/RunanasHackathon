@@ -39,13 +39,13 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.AppCompat" >
         </activity>
         <activity
             android:name=".LifeLoginWebPage"
             android:label="@string/title_activity_life_login_web_page" >
         </activity>
-
     </application>
 
 </manifest>
