@@ -4,11 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="YEAH!"
-        android:id="@+id/yeah"
-        android:layout_gravity="center_horizontal" />
+<WebView
+    android:id="@+id/webdiv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"></WebView>
 </LinearLayout>
