@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class LifeLoginWebPage extends Activity {
 
 
-    private static final String URL_TO_LOAD = "https://platform.lifelog.sonymobile.com/oauth/2/authorize?client_id=805oGS4lLGQZpXLfXw1RXwFbV7D3z9TL&scope=lifelog.activities.read";
+    private static final String URL_TO_LOAD = "https://platform.lifelog.sonymobile.com/oauth/2/authorize?client_id=805oGS4lLGQZpXLfXw1RXwFbV7D3z9TL&scope=lifelog.profile.read+lifelog.activities.read+lifelog.locations.read";
     Dialog auth_dialog;
     WebView web;
     @Override
