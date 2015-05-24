@@ -88,36 +88,28 @@ public class MainActivity extends ActionBarActivity {
         PendingIntent viewPendingIntent =
                 PendingIntent.getActivity(this, 0, viewIntent, 0);
 
-        NotificationCompat.Builder notificationBuilder =
+        NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.mipmap.ic_launcher, "Ok", viewPendingIntent).build();
+
+        NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("Run?")
-                        .setContentText("Run?")
+                        .setContentTitle("Got a Match!")
+                        .setContentText("Wanna Run?")
                         .setContentIntent(viewPendingIntent)
-                        .addAction(R.mipmap.ic_launcher, NOTIFICATION_ID, viewPendingIntent);
+                        .addAction(action);
 
 // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =
                 NotificationManagerCompat.from(this);
 
 // Build the notification and issues it with notification manager.
-        notificationManager.notify(eventId, notificationBuilder.build());
+        notificationManager.notify(eventId, mBuilder.build());
     }
 
 
 
 
 
-    public PendingIntent getPendingIntent(){
-        // Build an intent for an action to open a url
-        Intent urlIntent = new Intent(Intent.ACTION_VIEW);
-        Uri uri = Uri.parse("http://www.google.com");
-       // mapIntent.setData(uri);
-        PendingIntent urlPendingIntent =
-                PendingIntent.getActivity(this, 0, urlIntent, 0);
-
-        return urlPendingIntent;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
