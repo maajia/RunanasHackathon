@@ -12,7 +12,7 @@ import org.json.JSONException;
  */
 public class RunanasRestClient {
 
-    private static final String BASE_URL = "http://cconnection.de:8000/";
+    private static final String BASE_URL = "https://cconnection.de:8000/";
 
     private static PersistentCookieStore _cookieStore;
 

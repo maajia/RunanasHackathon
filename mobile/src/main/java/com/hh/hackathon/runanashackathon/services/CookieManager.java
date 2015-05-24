@@ -17,9 +17,10 @@ public class CookieManager {
 
     private final static String USERNAME = "username";
     private final static String PASSWORD = "password";
+    private final static String USERID = "userid";
     private final static String LIFELOG_TOKEN = "lifelog";
 
-
+    private final static String STATIC_USER = "1";
 
     private final PersistentCookieStore _cookieStore;
     private static  CookieManager INSTANCE;
@@ -50,6 +51,7 @@ public class CookieManager {
         newCookie.setPath("/");
         newCookie.setAttribute(USERNAME, username);
         newCookie.setAttribute(PASSWORD, passwordHash);
+        newCookie.setAttribute(USERID, STATIC_USER);
         _cookieStore.addCookie(newCookie);
     }
 
@@ -74,6 +76,11 @@ public class CookieManager {
     public String getPassword() {
         BasicClientCookie cookie = getCookie();
         return cookie != null?cookie.getAttribute(PASSWORD): null;
+    }
+
+    public String getUserId(){
+        BasicClientCookie cookie = getCookie();
+        return cookie != null?cookie.getAttribute(USERID): null;
     }
 
     private BasicClientCookie getCookie(){
