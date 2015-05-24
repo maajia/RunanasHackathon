@@ -46,6 +46,12 @@
             android:name=".LifeLoginWebPage"
             android:label="@string/title_activity_life_login_web_page" >
         </activity>
+        <activity
+            android:name=".services.MatchActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_match"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
     </application>
 
 </manifest>

@@ -7,4 +7,8 @@
     <string name="title_activity_life_login_web_page">LifeLoginWebPage</string>
     <string name="title_activity_logout">LogoutActivity</string>
     <string name="logout">Logout</string>
+
+    <string name="title_activity_match">MatchActivity</string>
+    <string name="Match">Match</string>
+    <string name="NAH">Maybe next time!</string>
 </resources>

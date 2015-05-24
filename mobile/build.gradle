@@ -33,13 +33,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     wearApp project(':wear')
-    compile 'com.google.android.gms:play-services:7.3.0'
-    compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.loopj.android:android-async-http:1.4.5'
     compile([group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.4.1'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.1'])
 
+    compile 'com.google.android.gms:play-services:7.3.0'
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.loopj.android:android-async-http:1.4.5'
+    compile 'com.android.support:support-v4:22.1.1'
 }
 
 

@@ -5,11 +5,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.app.NotificationCompat.WearableExtender;
 
 import com.hh.hackathon.runanashackathon.services.CookieManager;
-
+import com.hh.hackathon.runanashackathon.services.MatchActivity;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -17,6 +20,28 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final String NOTIFICATION_ID = "notification_id";
+        int eventId = 002;
+// Build intent for notification content
+        Intent viewIntent = new Intent(this, MatchActivity.class);
+        viewIntent.putExtra(NOTIFICATION_ID, eventId);
+        PendingIntent viewPendingIntent =
+                PendingIntent.getActivity(this, 0, viewIntent, 0);
+
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle("Run?")
+                        .setContentText("Run?")
+                        .setContentIntent(viewPendingIntent);
+
+// Get an instance of the NotificationManager service
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(this);
+
+// Build the notification and issues it with notification manager.
+        notificationManager.notify(eventId, notificationBuilder.build());
     }
 
     @Override

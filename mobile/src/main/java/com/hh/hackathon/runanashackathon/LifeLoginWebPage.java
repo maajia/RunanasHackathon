@@ -37,11 +37,9 @@ public class LifeLoginWebPage extends Activity {
         auth_dialog.setCancelable(true);
     }
 
-    private void loadResource(WebView wv, String resource) {
-        wv.loadUrl(resource);
-        wv.getSettings().setJavaScriptEnabled(true);
+    public void parseLoginResponse() {
+        startActivity(new Intent(LifeLoginWebPage.this, MainActivity.class));
     }
-
     private class Callback extends WebViewClient {  //HERE IS THE MAIN CHANGE.
 
         boolean authComplete = false;
@@ -67,6 +65,7 @@ public class LifeLoginWebPage extends Activity {
 
                 auth_dialog.dismiss();
                 Toast.makeText(getApplicationContext(), "Authorization Code is: " + "HACKATHON", Toast.LENGTH_SHORT).show();
+                LifeLoginWebPage.this.parseLoginResponse();
             }
         }
     }
