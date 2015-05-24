@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -22,9 +23,22 @@ public class LifeLoginWebPage extends Activity {
     private static final String URL_TO_LOAD = "https://platform.lifelog.sonymobile.com/oauth/2/authorize?client_id=805oGS4lLGQZpXLfXw1RXwFbV7D3z9TL&scope=lifelog.profile.read+lifelog.activities.read+lifelog.locations.read";
     Dialog auth_dialog;
     WebView web;
+    private void hideSystemUI() {
+        // Set the IMMERSIVE flag.
+        // Set the content to appear under the system bars so that the content
+        // doesn't resize when the system bars hide and show.
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideSystemUI();
         setContentView(R.layout.activity_life_login_web_page);
         auth_dialog = new Dialog(LifeLoginWebPage.this);
         auth_dialog.setContentView(R.layout.lifelog_dialog);
