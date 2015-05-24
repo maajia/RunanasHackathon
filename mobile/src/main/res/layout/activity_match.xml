@@ -10,16 +10,18 @@
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
         android:adjustViewBounds="true"
-        android:contentDescription="Jon Frost"
+        android:contentDescription="Ygritte"
         android:layout_marginTop="50dp"
-        android:src="@drawable/avatar" />
+        android:src="@drawable/ingritte_60_60" />
 
     <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
         android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="@color/app_green"
         android:textStyle="bold" android:textSize="50sp" android:gravity="center"
-        
+
         android:layout_marginTop="100dp"
         android:text="@string/Match" />
 
