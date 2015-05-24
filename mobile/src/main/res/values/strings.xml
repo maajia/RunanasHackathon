@@ -8,7 +8,7 @@
     <string name="title_activity_logout">LogoutActivity</string>
     <string name="logout">Logout</string>
 
-    <string name="title_activity_match">MatchActivity</string>
+    <string name="title_activity_match">You know something now: Jon Frost!</string>
     <string name="Match">Match</string>
     <string name="NAH">Maybe next time!</string>
     <string name="dummy_button">Keep Running!</string>

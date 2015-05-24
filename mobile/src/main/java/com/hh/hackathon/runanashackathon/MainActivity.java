@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("find your running mate");
+        setTitle("Similar Runners near by");
 
 
         final String NOTIFICATION_ID = "notification_id";
