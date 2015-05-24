@@ -177,8 +177,9 @@ public class MainActivity extends ActionBarActivity {
             TextView text = (TextView) v.findViewById(R.id.list_item_username);
             text.setText(c.getUsername());
 
-            TextView distance = (TextView) v.findViewById(R.id.distance);
-            text.setText("Distance: " + c.getDistance());
+            TextView distance = (TextView) v.findViewById(R.id.list_item_distance);
+            distance.setText("Distance: " + c.getDistance() + "m");
+
             return v;
         }
 
