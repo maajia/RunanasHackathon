@@ -20,7 +20,7 @@ public class CookieManager {
     private final static String USERID = "userid";
     private final static String LIFELOG_TOKEN = "lifelog";
 
-    private final static String STATIC_USER = "1";
+    private final static String STATIC_USER = "2";
 
     private final PersistentCookieStore _cookieStore;
     private static  CookieManager INSTANCE;
@@ -70,7 +70,7 @@ public class CookieManager {
 
     public String getUsername() {
         BasicClientCookie cookie = getCookie();
-        return cookie != null?cookie.getAttribute(USERNAME):null;
+        return cookie != null?cookie.getAttribute(USERNAME): null;
     }
 
     public String getPassword() {
@@ -79,8 +79,7 @@ public class CookieManager {
     }
 
     public String getUserId(){
-        BasicClientCookie cookie = getCookie();
-        return cookie != null?cookie.getAttribute(USERID): null;
+        return STATIC_USER;
     }
 
     private BasicClientCookie getCookie(){

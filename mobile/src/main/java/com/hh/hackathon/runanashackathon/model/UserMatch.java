@@ -8,10 +8,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class UserMatch {
 
+
+
     private String latitude;
-    private String longitute;
+    private String longitude;
     private String distance;
     private String username;
+
+
 
     public String getUsername() {
         return username;
@@ -37,11 +41,11 @@ public class UserMatch {
         this.latitude = latitude;
     }
 
-    public String getLongitute() {
-        return longitute;
+    public String getLongitude() {
+        return longitude;
     }
 
-    public void setLongitute(String longitute) {
-        this.longitute = longitute;
+    public void setLongitude(String longitute) {
+        this.longitude = longitute;
     }
 }
