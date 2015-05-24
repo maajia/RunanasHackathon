@@ -1,9 +1,12 @@
 package com.hh.hackathon.runanashackathon.services;
 
+import com.hh.hackathon.runanashackathon.LoginActivity;
+import com.hh.hackathon.runanashackathon.MainActivity;
 import com.hh.hackathon.runanashackathon.services.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +22,7 @@ import com.hh.hackathon.runanashackathon.R;
  * @see SystemUiHider
  */
 public class MatchActivity extends Activity {
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -138,6 +142,7 @@ public class MatchActivity extends Activity {
             if (AUTO_HIDE) {
                 delayedHide(AUTO_HIDE_DELAY_MILLIS);
             }
+            startActivity(new Intent(MatchActivity.this, MainActivity.class));
             return false;
         }
     };
