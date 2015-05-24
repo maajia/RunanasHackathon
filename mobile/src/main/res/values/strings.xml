@@ -11,4 +11,5 @@
     <string name="title_activity_match">MatchActivity</string>
     <string name="Match">Match</string>
     <string name="NAH">Maybe next time!</string>
+    <string name="dummy_button">Keep Running!</string>
 </resources>
