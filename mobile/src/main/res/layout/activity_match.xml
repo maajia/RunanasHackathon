@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="@drawable/home_match"
-    tools:context="com.hh.hackathon.runanashackathon.services.MatchActivity"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:background="@color/white"
+    android:layout_height="match_parent" tools:context="com.hh.hackathon.runanashackathon.services.MatchActivity"
+    android:layout_centerHorizontal="true"
     >
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -11,19 +11,19 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:maxHeight="50dp"
-        android:maxWidth="50dp"
         android:adjustViewBounds="true"
         android:contentDescription="Ygritte"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/ingritte_60_60" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ingritte_knows_all" />
 
 
     <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
         android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="@color/app_green"
         android:textStyle="bold" android:textSize="50sp" android:gravity="center"
 
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="250dp"
         android:text="@string/Match" />
 
     <!-- This FrameLayout insets its children based on system windows using
