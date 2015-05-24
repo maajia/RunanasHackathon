@@ -34,7 +34,8 @@ public class MainActivity extends ActionBarActivity {
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle("Run?")
                         .setContentText("Run?")
-                        .setContentIntent(viewPendingIntent);
+                        .setContentIntent(viewPendingIntent)
+                        .addAction(R.mipmap.ic_launcher,NOTIFICATION_ID, viewPendingIntent);
 
 // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =
@@ -42,6 +43,16 @@ public class MainActivity extends ActionBarActivity {
 
 // Build the notification and issues it with notification manager.
         notificationManager.notify(eventId, notificationBuilder.build());
+    }
+    public PendingIntent getPendingIntent(){
+        // Build an intent for an action to open a url
+        Intent urlIntent = new Intent(Intent.ACTION_VIEW);
+        Uri uri = Uri.parse("http://www.google.com");
+        mapIntent.setData(uri);
+        PendingIntent urlPendingIntent =
+                PendingIntent.getActivity(this, 0, urlIntent, 0);
+
+        return urlPendingIntent;
     }
 
     @Override
